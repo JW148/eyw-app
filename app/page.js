@@ -1,10 +1,8 @@
-import { Button } from "@nextui-org/react";
-
-export default function Home() {
+export default async function Home() {
   return (
-    <div className="flex flex-col m-8 text-center">
+    <div className="flex flex-col m-8 text-center h-[70vh]">
       <p className="text-9xl">Home</p>
-      <Button>Press ME</Button>
+      <p>Content goes here...</p>
     </div>
   );
 }
