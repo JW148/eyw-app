@@ -4,7 +4,6 @@ import { Button } from "@nextui-org/react";
 
 export default function Footer() {
   const { data: session } = useSession();
-  console.log(session);
   return (
     <footer className="flex flex-col w-full h-[30vh] items-center justify-center">
       {session ? (
