@@ -31,5 +31,9 @@ export const postType = defineType({
             type: 'array',
             of: [{type: 'block'}]
         }),
+        defineField({
+            name: 'video',
+            type: 'file',
+        })
     ],
 })
