@@ -13,7 +13,10 @@ import {apiVersion, dataset, projectId} from './sanity/env'
 import {schema} from './sanity/schemaTypes'
 import {structure} from './sanity/structure'
 
+import {Logo} from './sanity/components/Logo'
+
 export default defineConfig({
+  icon: Logo,
   basePath: '/studio',
   projectId,
   dataset,

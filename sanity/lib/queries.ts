@@ -9,3 +9,7 @@ export const POST_QUERY =
   defineQuery(`*[_type == "post" && slug.current == $slug][0]{
   title, body, mainImage, "fileUrl": video.asset->url
 }`);
+
+export const SUPPORT_QUERY = defineQuery(`
+  *[_type == "support"]
+  `)
