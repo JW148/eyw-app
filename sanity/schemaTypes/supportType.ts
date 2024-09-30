@@ -126,5 +126,13 @@ export const supportType = defineType({
                 }
               ],
         }),
+        defineField({
+            name: 'relatedActivities',
+            type: 'array',
+            of: [{
+                type: 'reference',
+                to: [{type: 'activity'}]
+            }]
+        })
     ]
 })

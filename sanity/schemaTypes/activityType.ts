@@ -1,8 +1,8 @@
 import { defineField, defineType } from "sanity";
 
-export const supportType = defineType({
-    name: 'support',
-    title: 'Support',
+export const activityType = defineType({
+    name: 'activity',
+    title: 'Activity',
     type: 'document',
     fields: [
         defineField({
@@ -27,6 +27,11 @@ export const supportType = defineType({
             type: 'text',
             description: 'An introduction to the activity',
             validation: (rule) => rule.required(),
+        }),
+        defineField({
+            name: 'materials',
+            type: 'array',
+            of: [{type: 'block'}],
         }),
         defineField({
             name: 'method',

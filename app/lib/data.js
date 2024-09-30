@@ -5,8 +5,9 @@ import {
   SUPPORT_QUERY,
 } from "../../sanity/lib/queries";
 
+const options = { next: { revalidate: 60 } };
+
 export async function getPosts() {
-  const options = { next: { revalidate: 30 } };
   try {
     const posts = await client.fetch(POSTS_QUERY, {}, options);
     return posts;
@@ -16,7 +17,6 @@ export async function getPosts() {
 }
 
 export async function getPost(slug) {
-  const options = { next: { revalidate: 30 } };
   try {
     const post = await client.fetch(POST_QUERY, { slug: slug }, options);
     return post;
@@ -26,7 +26,6 @@ export async function getPost(slug) {
 }
 
 export async function getSupportContent() {
-  const options = { next: { revalidate: 30 } };
   try {
     const content = await client.fetch(SUPPORT_QUERY, {}, options);
     return content;
