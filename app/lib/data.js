@@ -3,6 +3,8 @@ import {
   POSTS_QUERY,
   POST_QUERY,
   SUPPORT_QUERY,
+  RESOURCES_QUERY,
+  RESOURCE_QUERY,
 } from "../../sanity/lib/queries";
 
 const options = { next: { revalidate: 60 } };
@@ -31,5 +33,27 @@ export async function getSupportContent() {
     return content;
   } catch (error) {
     console.log(error);
+  }
+}
+
+export async function getResources() {
+  try {
+    const resources = await client.fetch(RESOURCES_QUERY, {}, options);
+    return resources;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+export async function getResource(slug) {
+  try {
+    const resource = await client.fetch(
+      RESOURCE_QUERY,
+      { slug: slug },
+      options
+    );
+    return resource;
+  } catch (err) {
+    console.error(err);
   }
 }

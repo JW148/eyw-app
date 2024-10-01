@@ -1,17 +1,19 @@
 import Image from "next/image";
-import { getPosts, getPost, getSupportContent } from "../lib/data";
-import SupportTile from "../components/supportCard/supportTile";
+import {
+  getPosts,
+  getPost,
+  getSupportContent,
+  getResources,
+} from "../lib/data";
+import ResourceCard from "../components/resources/resourceCard";
 
 export default async function Home() {
-  // const post = await getPost("video-test");
-  // console.log(post);
-  // const supportContent = await getSupportContent();
-  // console.log(supportContent);
+  const resources = await getResources();
   return (
     <div className="flex flex-col text-center h-[100vh]">
-      <div className="flex flex-row flex-wrap justify-center">
-        {/* {supportContent &&
-          supportContent.map((content) => <SupportTile content={content} />)} */}
+      <div className="flex flex-row gap-6 flex-wrap justify-center">
+        {resources &&
+          resources.map((resource) => <ResourceCard resource={resource} />)}
       </div>
     </div>
   );

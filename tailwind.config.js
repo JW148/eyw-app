@@ -11,4 +11,16 @@ module.exports = {
   ],
   darkMode: "class",
   plugins: [nextui()],
+  theme: {
+    extend: {
+      colors: {
+        eywnavy: "#1D3C70",
+        eywblue: "#34B3C7",
+        eywpurple: "#655CA3",
+        eywcoral: "#EA5658",
+        eywteal: "#4BB8A9",
+        eywyellow: "#EA9200",
+      },
+    },
+  },
 };

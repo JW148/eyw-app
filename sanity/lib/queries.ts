@@ -12,4 +12,12 @@ export const POST_QUERY =
 
 export const SUPPORT_QUERY = defineQuery(`
   *[_type == "support"]
-  `)
+  `);
+
+export const RESOURCES_QUERY = defineQuery(
+  `*[_type == "resource"][]{..., "imageURL": headerImage.asset->url}`
+);
+
+export const RESOURCE_QUERY = defineQuery(
+  `*[_type == "resource" && slug.current == $slug][0]{..., "imageURL": headerImage.asset->url}`
+);

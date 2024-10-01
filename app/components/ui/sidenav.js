@@ -25,26 +25,23 @@ export default function Sidenav({ isOpen, toggleDrawer }) {
       <div className="flex flex-col px-11">
         <Link
           href={"/"}
-          className="flex flex-row items-center mb-6 text-[#77B7A8]"
+          className="flex flex-row items-center mb-6 text-eywteal"
         >
           <IoHomeOutline size={46} />
           <p className="pl-6 text-3xl font-medium hover:underline">Home</p>
         </Link>
 
-        <Link href={"/training"} className="flex flex-row mb-6 text-[#DC9122]">
+        <Link href={"/training"} className="flex flex-row mb-6 text-eywyellow">
           <IoVideocamOutline size={46} />
           <p className="pl-6 text-3xl font-medium hover:underline">Training</p>
         </Link>
 
-        <Link href={"/resources"} className="flex flex-row mb-6 text-[#625CA0]">
+        <Link href={"/resources"} className="flex flex-row mb-6 text-eywpurple">
           <BsFileEarmarkText size={46} />
           <p className="pl-6 text-3xl font-medium hover:underline">Resources</p>
         </Link>
 
-        <Link
-          href={"/activities"}
-          className="flex flex-row mb-6 text-[#CD5758]"
-        >
+        <Link href={"/activities"} className="flex flex-row mb-6 text-eywcoral">
           <PiPersonArmsSpread size={46} />
           <p className="pl-6 text-3xl font-medium hover:underline">
             Activities
