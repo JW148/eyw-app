@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import Sidenav from "./sidenav";
 
-export default function ContentHeader({ title }) {
+export default function ContentHeader({ title, colour }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
@@ -14,7 +14,7 @@ export default function ContentHeader({ title }) {
 
   return (
     <>
-      <div className="grid grid-cols-6 items-center pb-20 pt-10 bg-gradient-to-b from-eywteal to-100%">
+      <div className="grid grid-cols-6 items-center pb-20 pt-10 bg-gradient-to-b from-eywteal h-[35vh]">
         <div className="flex justify-center">
           <Button
             isIconOnly
@@ -26,7 +26,7 @@ export default function ContentHeader({ title }) {
           </Button>
         </div>
         <div className="col-span-4 flex flex-col text-center">
-          <p className="text-6xl pt-2 font-bold text-[#FFFFFF]">{title}</p>
+          <p className={`text-6xl pt-2 font-bold text-${colour}`}>{title}</p>
         </div>
       </div>
       <Sidenav isOpen={isOpen} toggleDrawer={toggleDrawer} />
