@@ -5,6 +5,8 @@ import {
   SUPPORT_QUERY,
   RESOURCES_QUERY,
   RESOURCE_QUERY,
+  ACTIVITIES_QUERY,
+  ACTIVITY_QUERY,
 } from "../../sanity/lib/queries";
 
 const options = { next: { revalidate: 60 } };
@@ -55,5 +57,27 @@ export async function getResource(slug) {
     return resource;
   } catch (err) {
     console.error(err);
+  }
+}
+
+export async function getActivities() {
+  try {
+    const activities = await client.fetch(ACTIVITIES_QUERY, {}, options);
+    return activities;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function getAcitvity(slug) {
+  try {
+    const activity = await client.fetch(
+      ACTIVITY_QUERY,
+      { slug: slug },
+      options
+    );
+    return activity;
+  } catch (error) {
+    console.error(error);
   }
 }

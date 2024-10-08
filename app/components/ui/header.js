@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="grid grid-cols-6 items-center pb-20 pt-10 bg-gradient-to-b from-[#77B7A8] to-100%">
+      <div className="grid grid-cols-6 items-center pb-20 pt-10 bg-gradient-to-b from-eywteal-1000 to-100%">
         <div className="flex justify-center">
           <Button
             isIconOnly
@@ -32,7 +32,7 @@ export default function Header() {
             height={300}
             className="mx-auto"
           />
-          <p className="text-2xl pt-2 font-light text-[#2D3E6E]">
+          <p className="text-2xl pt-2 font-light text-eywnavy-1000">
             Physical Literacy App
           </p>
         </div>

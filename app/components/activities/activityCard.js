@@ -2,7 +2,7 @@ import { Card, CardBody, CardFooter } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function ResourceCard({ resource }) {
+export default function ActivityCard({ activity }) {
   return (
     <Card
       shadow="lg"
@@ -11,10 +11,10 @@ export default function ResourceCard({ resource }) {
       isPressable
       disableRipple
     >
-      <Link href={`/resources/${resource.slug.current}`}>
+      <Link href={`/activities/${activity.slug.current}`}>
         <CardBody>
           <Image
-            src={resource.imageURL}
+            src={activity.imageURL}
             width={300}
             height={300}
             className="rounded-lg"
@@ -22,7 +22,7 @@ export default function ResourceCard({ resource }) {
         </CardBody>
         <CardFooter className="justify-center ">
           <p className="font-light text-lg text-eywnavy-1000">
-            {resource.title}
+            {activity.title}
           </p>
         </CardFooter>
       </Link>
