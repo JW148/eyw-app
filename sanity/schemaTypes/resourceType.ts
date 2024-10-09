@@ -14,7 +14,7 @@ export const resourceType = defineType({
         rule
           .required()
           .max(40)
-          .warning("The title shouldn't be more than 120 characters."),
+          .warning("The title shouldn't be more than 40 characters."),
     }),
     defineField({
       name: "slug",

@@ -1,10 +1,9 @@
-import { type SchemaTypeDefinition } from 'sanity'
+import { type SchemaTypeDefinition } from "sanity";
 
-import { postType } from './postType'
-import { supportType } from './supportType'
-import {activityType} from './activityType'
-import { resourceType } from './resourceType'
+import { activityType } from "./activityType";
+import { resourceType } from "./resourceType";
+import { trainingType } from "./trainingType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [postType, supportType, activityType, resourceType],
-}
+  types: [activityType, resourceType, trainingType],
+};
