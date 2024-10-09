@@ -18,6 +18,7 @@ export default function ActivityCard({ activity }) {
             width={300}
             height={300}
             className="rounded-lg"
+            alt="Activity card main iamge"
           />
         </CardBody>
         <CardFooter className="justify-center ">

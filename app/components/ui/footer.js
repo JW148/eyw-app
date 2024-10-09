@@ -28,7 +28,7 @@ export default function Footer() {
           Sign In
         </Button>
       )}
-      <p className="font-extralight">© Early Years Wales 2018</p>
+      <p className="font-extralight">© Early Years Wales 2024</p>
     </footer>
   );
 }

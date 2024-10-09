@@ -12,12 +12,16 @@ export default async function Home() {
         <p className="text-4xl text-eywnavy-1000 my-20">Resources</p>
         <div className="flex flex-row gap-6 flex-wrap justify-center">
           {resources &&
-            resources.map((resource) => <ResourceCard resource={resource} />)}
+            resources.map((resource, i) => (
+              <ResourceCard resource={resource} key={i} />
+            ))}
         </div>
         <p className="text-4xl text-eywnavy-1000 my-20">Activities</p>
         <div className="flex flex-row gap-6 flex-wrap justify-center">
           {activities &&
-            activities.map((activity) => <ActivityCard activity={activity} />)}
+            activities.map((activity, i) => (
+              <ActivityCard activity={activity} key={i} />
+            ))}
         </div>
       </div>
     </div>

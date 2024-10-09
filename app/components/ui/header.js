@@ -31,6 +31,7 @@ export default function Header() {
             width={400}
             height={300}
             className="mx-auto"
+            alt="Early Years Wales Logo"
           />
           <p className="text-2xl pt-2 font-light text-eywnavy-1000">
             Physical Literacy App

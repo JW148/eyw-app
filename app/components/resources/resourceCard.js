@@ -18,6 +18,7 @@ export default function ResourceCard({ resource }) {
             width={300}
             height={300}
             className="rounded-lg"
+            alt="Resource card main image"
           />
         </CardBody>
         <CardFooter className="justify-center ">

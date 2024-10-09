@@ -18,15 +18,7 @@ export default function LoginForm() {
         alert("Incorrect credentials. Plese try again.");
       }
     } catch (error) {
-      if (error instanceof AuthError) {
-        switch (error.type) {
-          case "CredentialsSignin":
-            setError("Invalid credentials.");
-          default:
-            setError("Something went wrong.");
-        }
-      }
-      throw error;
+      console.error(error);
     }
   };
 
