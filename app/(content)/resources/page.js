@@ -10,7 +10,9 @@ export default async function Page() {
       <div className="flex flex-col text-center min-h-[100vh]">
         <div className="flex flex-row gap-6 flex-wrap justify-center">
           {resources &&
-            resources.map((resource) => <ResourceCard resource={resource} />)}
+            resources.map((resource, i) => (
+              <ResourceCard resource={resource} key={i} />
+            ))}
         </div>
       </div>
     </>

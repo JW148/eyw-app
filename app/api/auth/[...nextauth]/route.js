@@ -5,7 +5,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 const auth_pass =
   "$2b$10$tPnWIdzgbncRMw4bGZmxM.bRbDJ/KbWu9NjGKGaH47.y5GIsUX.cK";
 
-export const authOptions = {
+const authOptions = {
   pages: {
     signIn: "/login",
   },
@@ -21,7 +21,7 @@ export const authOptions = {
         console.log("authorising");
         //get the credentials from the request
         const { password } = credentials;
-        console.log(password)
+        console.log(password);
 
         const user = {
           name: "dev",
@@ -29,7 +29,7 @@ export const authOptions = {
 
         //use bcrypt to compare the provided password against the stored password
         const passwordsMatch = await bcrypt.compare(password, auth_pass);
-        console.log(passwordsMatch)
+        console.log(passwordsMatch);
         //return the basic user object if they match
         if (passwordsMatch) return user;
 

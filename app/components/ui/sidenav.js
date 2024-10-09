@@ -21,6 +21,7 @@ export default function Sidenav({ isOpen, toggleDrawer }) {
         width={400}
         height={300}
         className="mx-auto p-2 mb-4"
+        alt="EYW logo"
       />
       <div className="flex flex-col px-11">
         <Link

@@ -10,7 +10,9 @@ export default async function Page() {
       <div className="flex flex-col text-center min-h-[100vh]">
         <div className="flex flex-row gap-6 flex-wrap justify-center">
           {activities &&
-            activities.map((activity) => <ActivityCard activity={activity} />)}
+            activities.map((activity, i) => (
+              <ActivityCard activity={activity} key={i} />
+            ))}
         </div>
       </div>
     </>

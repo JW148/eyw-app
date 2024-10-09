@@ -29,6 +29,7 @@ export default function LoginForm() {
         width={400}
         height={300}
         className="mx-auto"
+        alt="EYW logo"
       />
       <form
         onSubmit={handleSubmit}

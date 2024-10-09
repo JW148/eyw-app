@@ -29,7 +29,12 @@ export default async function Page({ params: { slug } }) {
   return (
     <div className="flex flex-col overflow-hidden">
       <div className="flex w-full relative h-[35vh]">
-        <Image src={activity?.imageURL} fill={true} className="object-cover " />
+        <Image
+          src={activity?.imageURL}
+          fill={true}
+          className="object-cover"
+          alt="Activity header image"
+        />
         <div className="grid grow grid-cols-6 top-0  bg-gradient-to-t from-slate-100 backdrop z-10 items-center justify-items-center text-center ">
           <Back />
           <div className="flex flex-col col-span-4 text-eywcoral-750">
@@ -37,7 +42,12 @@ export default async function Page({ params: { slug } }) {
               {activity?.title}
             </p>
           </div>
-          <Image src={"/eyw-logo-small.png"} width={100} height={100} />
+          <Image
+            src={"/eyw-logo-small.png"}
+            width={100}
+            height={100}
+            alt="Small EYW logo"
+          />
         </div>
       </div>
       <Card
@@ -69,14 +79,15 @@ export default async function Page({ params: { slug } }) {
             Activity Gallery
           </p>
           <div className="flex flex-wrap gap-6 justify-center text-center">
-            {activity.galleryImages?.map((image) => (
-              <div className="flex flex-col w-[48%]">
+            {activity.galleryImages?.map((image, i) => (
+              <div className="flex flex-col w-[48%]" key={i}>
                 <div className="flex w-full h-[300px] relative">
                   <Image
                     src={urlFor(image).url()}
                     fill
                     key={image._key}
                     className="object-cover rounded-xl "
+                    alt="Activity gallery image"
                   />
                   <p className="absolute bottom-5 right-5 text-slate-500 text-xs">
                     {image.attribution}

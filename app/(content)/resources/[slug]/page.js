@@ -21,13 +21,23 @@ export default async function Page({ params: { slug } }) {
   return (
     <div className="flex flex-col overflow-hidden">
       <div className="flex w-full relative h-[35vh]">
-        <Image src={resource.imageURL} fill={true} className="object-cover" />
+        <Image
+          src={resource.imageURL}
+          fill={true}
+          className="object-cover"
+          alt="Resource header image"
+        />
         <div className="grid grow grid-cols-6 top-0  bg-gradient-to-t from-slate-100 backdrop z-10 items-center justify-items-center text-center ">
           <Back />
           <div className="flex flex-col col-span-4 text-eywnavy-1000">
             <p className="text-5xl mb-4 font-bold ">{resource?.title}</p>
           </div>
-          <Image src={"/eyw-logo-small.png"} width={100} height={100} />
+          <Image
+            src={"/eyw-logo-small.png"}
+            width={100}
+            height={100}
+            alt="Small EYW logo"
+          />
         </div>
       </div>
       <Card
@@ -44,9 +54,12 @@ export default async function Page({ params: { slug } }) {
           />
         </div>
         {resource.body &&
-          resource.body.map((block) => {
+          resource.body.map((block, i) => {
             return (
-              <div className="flex w-full self-center flex-col items-center">
+              <div
+                className="flex w-full self-center flex-col items-center"
+                key={i}
+              >
                 <div className="flex flex-col my-6 text-justify text-white text-large rounded-2xl bg-eywpurple-750 p-10">
                   {block.itemTitle && (
                     <p className="font-semibold text-2xl mb-8">
@@ -64,6 +77,7 @@ export default async function Page({ params: { slug } }) {
                       src={urlFor(block.image).url()}
                       fill={true}
                       className="object-cover rounded-xl"
+                      alt="Resource image in body"
                     />
                   </div>
                 )}
