@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Back } from "../../../components/ui/back";
 import { urlFor } from "../../../../sanity/lib/image";
 import { Card } from "@nextui-org/react";
-import Video from "next-video";
+import Player from "next-video/player";
 
 export default async function Page({ params: { slug } }) {
   //get resource by slug
@@ -42,7 +42,7 @@ export default async function Page({ params: { slug } }) {
         </div>
       </div>
       <div className="flex w-[50vw] my-20 self-center">
-        <Video src={training.videoUrl} className="shadow-xl rounded-xl" />
+        <Player src={training.videoUrl} className="shadow-xl" />
       </div>
     </div>
   );
