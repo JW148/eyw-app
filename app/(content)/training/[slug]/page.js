@@ -42,7 +42,7 @@ export default async function Page({ params: { slug } }) {
         </div>
       </div>
       <div className="flex w-[50vw] my-20 self-center">
-        <Video src={training.videoUrl} />
+        <Video src={training.videoUrl} className="shadow-xl rounded-xl" />
       </div>
     </div>
   );
