@@ -18,10 +18,8 @@ const authOptions = {
         password: {},
       },
       async authorize(credentials, req) {
-        console.log("authorising");
         //get the credentials from the request
         const { password } = credentials;
-        console.log(password);
 
         const user = {
           name: "dev",
@@ -29,7 +27,6 @@ const authOptions = {
 
         //use bcrypt to compare the provided password against the stored password
         const passwordsMatch = await bcrypt.compare(password, auth_pass);
-        console.log(passwordsMatch);
         //return the basic user object if they match
         if (passwordsMatch) return user;
 

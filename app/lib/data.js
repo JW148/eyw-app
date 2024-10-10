@@ -6,9 +6,10 @@ import {
   ACTIVITY_QUERY,
   TRAININGS_QUERY,
   TRAINING_QUERY,
+  FETCH_LATEST_ACTIVITY,
 } from "../../sanity/lib/queries";
 
-const options = { next: { revalidate: 60 } };
+const options = { next: { revalidate: 30 } };
 
 export async function getResources() {
   try {
@@ -71,6 +72,15 @@ export async function getTraining(slug) {
       options
     );
     return training;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function getLatestActivity() {
+  try {
+    const activity = await client.fetch(FETCH_LATEST_ACTIVITY, {}, options);
+    return activity;
   } catch (error) {
     console.error(error);
   }

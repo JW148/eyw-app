@@ -23,3 +23,7 @@ export const TRAININGS_QUERY = defineQuery(
 export const TRAINING_QUERY = defineQuery(
   `*[_type == "training" && slug.current == $slug][0]{..., "imageURL": headerImage.asset->url, "videoUrl": video.asset->url}`
 );
+
+export const FETCH_LATEST_ACTIVITY = defineQuery(
+  `*[_type == "activity"]| order(_createdAt desc)[0]{..., "imageURL": headerImage.asset->url}`
+);

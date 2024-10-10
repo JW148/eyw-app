@@ -8,14 +8,20 @@ import { Card } from "@nextui-org/react";
 export default async function Page({ params: { slug } }) {
   //get resource by slug
   const resource = await getResource(slug);
-  console.log(resource);
 
   const components = {
     list: {
-      bullet: ({ children }) => <ul className="list-disc">{children}</ul>,
+      bullet: ({ children }) => <ul className="list-disc ">{children}</ul>,
       number: ({ children }) => <ol className="list-decimal">{children}</ol>,
     },
-    block: {},
+    block: {
+      h1: ({ children }) => (
+        <p className="text-2xl text-center m-10 font-semibold underline">
+          {children}
+        </p>
+      ),
+      normal: ({ children }) => <p className="pb-4">{children}</p>,
+    },
   };
 
   return (
@@ -27,16 +33,19 @@ export default async function Page({ params: { slug } }) {
           className="object-cover"
           alt="Resource header image"
         />
-        <div className="grid grow grid-cols-6 top-0  bg-gradient-to-t from-slate-100 backdrop z-10 items-center justify-items-center text-center ">
+        <div className="grid grow grid-cols-4 top-0  bg-gradient-to-t from-slate-100 backdrop z-10 items-center justify-items-center text-center ">
           <Back />
-          <div className="flex flex-col col-span-4 text-eywnavy-1000">
-            <p className="text-5xl mb-4 font-bold ">{resource?.title}</p>
+          <div className="flex flex-col col-span-2 text-eywnavy-1000">
+            <p className="text-4xl md:text-5xl mb-4 font-bold ">
+              {resource?.title}
+            </p>
           </div>
           <Image
             src={"/eyw-logo-small.png"}
             width={100}
             height={100}
             alt="Small EYW logo"
+            className="self-start md:self-center"
           />
         </div>
       </div>
@@ -84,6 +93,14 @@ export default async function Page({ params: { slug } }) {
               </div>
             );
           })}
+        <div className="flex h-[75px] relative mt-10">
+          <Image
+            src={"/eyw_resource_banner.png"}
+            fill
+            className="object-contain"
+            alt="Resource footer logos"
+          />
+        </div>
       </Card>
     </div>
   );
