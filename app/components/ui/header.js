@@ -33,7 +33,7 @@ export default function Header() {
             className="mx-auto"
             alt="Early Years Wales Logo"
           />
-          <p className="text-lg md:text-2xl md:mt-3 mt-1 font-extrabold text-eywnavy-1000">
+          <p className="text-medium md:text-2xl md:mt-3 mt-1 font-extrabold text-eywnavy-1000">
             Physical Literacy App
           </p>
         </div>
