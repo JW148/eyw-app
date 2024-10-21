@@ -23,7 +23,7 @@ export default function ResourceCard({ resource }) {
           />
         </CardBody>
         <CardFooter className="justify-center ">
-          <p className="font-light text-lg text-eywnavy-1000">
+          <p className="font-medium text-lg text-eywnavy-1000">
             {resource.title}
           </p>
         </CardFooter>

@@ -14,7 +14,7 @@ export default function ContentHeader({ title, colour }) {
 
   return (
     <>
-      <div className="grid grid-cols-4 items-center pb-14 md:pb-20 pt-10 bg-gradient-to-b from-eywteal-1000 h-[30vh] md:h-[35vh]">
+      <div className="grid grid-cols-4 items-center pb-14 md:pb-20 pt-10 bg-gradient-to-b from-eywteal-1000/75 h-[30vh] md:h-[35vh]">
         <div className="flex justify-center">
           <Button
             isIconOnly

@@ -23,7 +23,7 @@ export default function ActivityCard({ activity }) {
           />
         </CardBody>
         <CardFooter className="justify-center ">
-          <p className="font-light text-lg text-eywnavy-1000">
+          <p className="font-medium text-lg text-eywnavy-1000">
             {activity.title}
           </p>
         </CardFooter>
