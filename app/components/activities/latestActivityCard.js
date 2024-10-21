@@ -32,6 +32,7 @@ export default function LatestActivityCard({ activity }) {
             fill
             className="rounded-lg object-cover max-w-[40%]"
             alt="Activity card main iamge"
+            quality={70}
           />
           <div className="flex flex-col m-6">
             <PortableText

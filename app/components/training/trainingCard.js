@@ -19,6 +19,7 @@ export default function TrainingCard({ training }) {
             height={300}
             className="rounded-lg"
             alt="Training card main image"
+            quality={70}
           />
         </CardBody>
         <CardFooter className="justify-center ">

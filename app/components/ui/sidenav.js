@@ -18,10 +18,10 @@ export default function Sidenav({ isOpen, toggleDrawer }) {
         overlayOpacity={0.6}
       >
         <Image
-          src={"/eyw-logo.png"}
+          src={"/logos/Logo Full Colour.png"}
           width={400}
           height={300}
-          className="mx-auto p-2 mb-4"
+          className="mx-auto p-3 mb-4"
           alt="EYW logo"
         />
         <div className="flex flex-col px-11">
@@ -76,7 +76,7 @@ export default function Sidenav({ isOpen, toggleDrawer }) {
         overlayOpacity={0.2}
       >
         <Image
-          src={"/eyw-logo.png"}
+          src={"/logos/Logo Full Colour.png"}
           width={400}
           height={300}
           className="mx-auto p-3 mb-6"

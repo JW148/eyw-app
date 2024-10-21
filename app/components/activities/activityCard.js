@@ -19,6 +19,7 @@ export default function ActivityCard({ activity }) {
             height={300}
             className="rounded-lg"
             alt="Activity card main iamge"
+            quality={70}
           />
         </CardBody>
         <CardFooter className="justify-center ">

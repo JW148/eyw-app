@@ -13,7 +13,9 @@ export default async function Home() {
       <div className="flex flex-col w-[90%] md:w-[60%] ">
         {/* <p className="text-4xl text-eywnavy-1000 my-20">This Week's Activity</p>
         {latestActivity && <LatestActivityCard activity={latestActivity} />} */}
-        <p className="text-4xl text-eywnavy-1000 my-20">Resources</p>
+        <p className="text-4xl text-eywnavy-1000 md:my-20 mt-0 mb-20">
+          Resources
+        </p>
         <div className="flex flex-row gap-6 flex-wrap justify-center">
           {resources &&
             resources.map((resource, i) => (

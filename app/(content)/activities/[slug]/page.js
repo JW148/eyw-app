@@ -42,16 +42,16 @@ export default async function Page({ params: { slug } }) {
             </p>
           </div>
           <Image
-            src={"/eyw-logo-small.png"}
+            src={"/logos/Logo Icon.png"}
             width={100}
             height={100}
             alt="Small EYW logo"
-            className="self-start md:self-center"
+            className="self-start md:self-center p-3"
           />
         </div>
       </div>
       <Card
-        className="flex w-[95vw] md:w-[50vw] self-center text-eywnavy-1000 p-2 md:p-6 mb-20 mt-5"
+        className="flex w-[95vw] md:w-[50vw] self-center text-eywnavy-1000 p-2 md:p-6 mb-20 mt-10"
         shadow="lg"
       >
         <div className="flex flex-col w-full text-justify text-large px-8 md:px-10 mb-6 ">
@@ -88,6 +88,7 @@ export default async function Page({ params: { slug } }) {
                     key={image._key}
                     className="object-cover rounded-xl "
                     alt="Activity gallery image"
+                    quality={70}
                   />
                   <p className="absolute bottom-5 right-5 text-slate-500 text-xs">
                     {image.attribution}

@@ -42,7 +42,7 @@ export default async function Page({ params: { slug } }) {
             </p>
           </div>
           <Image
-            src={"/eyw-logo-small.png"}
+            src={"/logos/Logo Icon.png"}
             width={100}
             height={100}
             alt="Small EYW logo"
@@ -50,7 +50,7 @@ export default async function Page({ params: { slug } }) {
           />
         </div>
       </div>
-      <Card className="flex w-[50vw] self-center text-eywnavy-1000 p-6 mb-20 mt-5">
+      <Card className="flex w-[50vw] self-center text-eywnavy-1000 p-6 mb-20 mt-10">
         <div className="text-large mb-6">
           <PortableText
             value={training?.introduction}

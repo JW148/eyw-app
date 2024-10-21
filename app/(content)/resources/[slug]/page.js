@@ -41,22 +41,22 @@ export default async function Page({ params: { slug } }) {
             </p>
           </div>
           <Image
-            src={"/eyw-logo-small.png"}
+            src={"/logos/Logo Icon.png"}
             width={100}
             height={100}
             alt="Small EYW logo"
-            className="self-start md:self-center"
+            className="self-start md:self-center p-3"
           />
         </div>
       </div>
       <Card
-        className="flex w-[50vw] self-center p-6 mb-20 mt-5 text-eywnavy-1000"
+        className="flex w-[95vw] md:w-[50vw] self-center text-eywnavy-1000 p-2 md:p-6 mb-20 mt-10"
         shadow="lg"
       >
         <p className="text-2xl text-center m-10 underline font-semibold">
           {resource?.subheading}
         </p>
-        <div className="flex w-full self-center text-justify text-large px-10 mb-6">
+        <div className="flex flex-col w-full text-justify text-large px-8 md:px-10 mb-6 ">
           <PortableText
             value={resource?.introduction}
             components={components}

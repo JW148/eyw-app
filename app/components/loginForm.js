@@ -25,7 +25,7 @@ export default function LoginForm() {
   return (
     <div className="flex flex-col md:w-[450px] w-[90vw] p-6 rounded-3xl border shadow-2xl items-center bg-white mb-10">
       <Image
-        src={"/eyw-logo.png"}
+        src={"/logos/Logo Full Colour.png"}
         width={400}
         height={300}
         className="mx-auto"

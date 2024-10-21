@@ -1,5 +1,3 @@
-
-
-export const  Logo = () => (
-  <img src={'/eyw-logo-small.png'} alt='My Logo' width={30} height={30} />
+export const Logo = () => (
+  <img src={"/logos/Logo Icon.png"} alt="My Logo" width={30} height={30} />
 );

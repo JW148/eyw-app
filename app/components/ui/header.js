@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="grid grid-cols-4 items-center pb-20 pt-10 bg-gradient-to-b from-eywteal-1000 to-100%">
+      <div className="grid grid-cols-4 items-center pb-32 pt-16 bg-gradient-to-b from-eywteal-1000/75 to-100%">
         <div className="flex justify-center">
           <Button
             isIconOnly
@@ -27,13 +27,13 @@ export default function Header() {
         </div>
         <div className="col-span-2 flex flex-col text-center">
           <Image
-            src={"/eyw-logo.png"}
+            src={"/logos/Logo Full Colour.png"}
             width={400}
             height={300}
             className="mx-auto"
             alt="Early Years Wales Logo"
           />
-          <p className="text-lg md:text-2xl pt-2 font-light text-eywnavy-1000">
+          <p className="text-lg md:text-2xl md:mt-3 mt-1 font-extrabold text-eywnavy-1000">
             Physical Literacy App
           </p>
         </div>
