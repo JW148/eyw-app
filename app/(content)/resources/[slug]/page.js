@@ -83,7 +83,7 @@ export default async function Page({ params: { slug } }) {
                 {block.image && (
                   <div className="flex relative w-full min-h-[500px]">
                     <Image
-                      src={urlFor(block.image).url()}
+                      src={urlFor(block.image).quality(60).format("webp").url()}
                       fill={true}
                       className="object-cover rounded-xl"
                       alt="Resource image in body"

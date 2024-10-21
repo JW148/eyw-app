@@ -83,7 +83,7 @@ export default async function Page({ params: { slug } }) {
               <div className="flex flex-col w-[90%] md:w-[48%]" key={i}>
                 <div className="flex w-full h-[300px] relative">
                   <Image
-                    src={urlFor(image).url()}
+                    src={urlFor(image).quality(60).format("webp").url()}
                     fill
                     key={image._key}
                     className="object-cover rounded-xl "
