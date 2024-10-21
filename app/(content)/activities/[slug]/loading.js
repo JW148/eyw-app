@@ -6,7 +6,7 @@ export default function Page() {
     <div className="flex flex-col overflow-hidden animate-pulse">
       <div className="flex w-full relative h-[35vh]">
         <Image
-          src={"/placeholder.png"}
+          src={"/placeholder.webp"}
           fill={true}
           className="object-cover"
           alt="Placeholder image"
