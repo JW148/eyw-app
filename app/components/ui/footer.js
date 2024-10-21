@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/react";
 export default function Footer() {
   const { data: session } = useSession();
   return (
-    <footer className="flex flex-col w-full h-[30vh] items-center justify-center">
+    <footer className="flex flex-col w-full h-[30vh] items-center justify-center bg-slate-100">
       {session ? (
         <>
           <p className="font-light text-md text-gray-600">

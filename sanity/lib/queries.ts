@@ -5,7 +5,7 @@ export const RESOURCES_QUERY = defineQuery(
 );
 
 export const RESOURCE_QUERY = defineQuery(
-  `*[_type == "resource" && slug.current == $slug][0]{..., "imageURL": headerImage.asset->url}`
+  `*[_type == "resource" && slug.current == $slug][0]{..., "imageURL": headerImage.asset->url, relatedActivities[]->}`
 );
 
 export const ACTIVITIES_QUERY = defineQuery(

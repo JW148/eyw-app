@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Back } from "../../../components/ui/back";
 import { urlFor } from "../../../../sanity/lib/image";
 import { Card } from "@nextui-org/react";
+import RelatedActivities from "../../../components/activities/relatedActivities";
 
 export default async function Page({ params: { slug } }) {
   //get resource by slug
@@ -102,6 +103,9 @@ export default async function Page({ params: { slug } }) {
           />
         </div>
       </Card>
+      {resource.relatedActivities && (
+        <RelatedActivities activities={resource.relatedActivities} />
+      )}
     </div>
   );
 }
