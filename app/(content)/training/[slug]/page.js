@@ -69,7 +69,7 @@ export default async function Page({ params: { slug } }) {
         </div>
         <div className="flex h-[75px] relative mt-10">
           <Image
-            src={"/eyw_resource_banner.png"}
+            src={"/logos/Logo Full Colour.png"}
             fill
             className="object-contain"
             alt="Resource footer logos"

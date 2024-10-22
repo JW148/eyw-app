@@ -88,9 +88,8 @@ export default async function Page({ params: { slug } }) {
                 <div className="flex w-full h-[300px] relative">
                   <Image
                     src={urlFor(image)
-                      .height(300)
+                      .height(400)
                       .fit("clip")
-                      .quality(90)
                       .auto("format")
                       .url()}
                     fill
@@ -108,9 +107,9 @@ export default async function Page({ params: { slug } }) {
             ))}
           </div>
         </div>
-        <div className="flex h-[75px] relative mt-10">
+        <div className="flex h-[50px] relative mt-10">
           <Image
-            src={"/eyw_resource_banner.png"}
+            src={"/logos/Logo Full Colour.png"}
             fill
             className="object-contain"
             alt="Resource footer logos"

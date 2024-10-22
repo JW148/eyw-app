@@ -16,9 +16,8 @@ export default function ResourceCard({ resource }) {
         <CardBody>
           <Image
             src={urlFor(resource.headerImage)
-              .width(300)
+              .width(400)
               .fit("clip")
-              .quality(75)
               .auto("format")
               .url()}
             width={300}

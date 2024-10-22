@@ -10,7 +10,7 @@ export default async function Home() {
   // const latestActivity = await getLatestActivity();
   return (
     <div className="flex w-full flex-col  items-center">
-      <div className="flex flex-col w-[90%] md:w-[60%] text-center font-semibold">
+      <div className="flex flex-col w-[90%] md:w-[75%] text-center font-semibold">
         {/* <p className="text-4xl text-eywnavy-1000 my-20">This Week's Activity</p>
         {latestActivity && <LatestActivityCard activity={latestActivity} />} */}
         <p className="text-3xl md:text-4xl  text-eywnavy-1000 md:mt-20 mt-0 mb-8 md:mb-8">

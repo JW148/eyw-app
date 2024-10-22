@@ -16,9 +16,8 @@ export default function ActivityCard({ activity }) {
         <CardBody>
           <Image
             src={urlFor(activity.headerImage)
-              .width(300)
+              .width(400)
               .fit("clip")
-              .quality(75)
               .auto("format")
               .url()}
             width={300}
