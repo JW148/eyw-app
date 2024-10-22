@@ -29,7 +29,11 @@ export default async function Page({ params: { slug } }) {
     <div className="flex flex-col overflow-hidden">
       <div className="flex w-full relative h-[35vh]">
         <Image
-          src={activity?.imageURL}
+          src={urlFor(activity.headerImage)
+            .width(1000)
+            .fit("clip")
+            .auto("format")
+            .url()}
           fill={true}
           className="object-cover"
           alt="Activity header image"
@@ -83,7 +87,12 @@ export default async function Page({ params: { slug } }) {
               <div className="flex flex-col w-[90%] md:w-[48%]" key={i}>
                 <div className="flex w-full h-[300px] relative">
                   <Image
-                    src={urlFor(image).quality(60).format("webp").url()}
+                    src={urlFor(image)
+                      .height(300)
+                      .fit("clip")
+                      .quality(90)
+                      .auto("format")
+                      .url()}
                     fill
                     key={image._key}
                     className="object-cover rounded-xl "

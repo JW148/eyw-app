@@ -1,6 +1,7 @@
 import { Card, CardBody, CardFooter } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
+import { urlFor } from "../../../sanity/lib/image";
 
 export default function ActivityCard({ activity }) {
   return (
@@ -14,11 +15,16 @@ export default function ActivityCard({ activity }) {
       <Link href={`/activities/${activity.slug.current}`}>
         <CardBody>
           <Image
-            src={activity.imageURL}
+            src={urlFor(activity.headerImage)
+              .width(300)
+              .fit("clip")
+              .quality(75)
+              .auto("format")
+              .url()}
             width={300}
-            height={300}
+            height={200}
             className="rounded-lg"
-            alt="Activity card main iamge"
+            alt="Activity card main image"
             quality={70}
           />
         </CardBody>

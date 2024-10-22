@@ -10,19 +10,19 @@ export default async function Home() {
   // const latestActivity = await getLatestActivity();
   return (
     <div className="flex w-full flex-col  items-center">
-      <div className="flex flex-col w-[90%] md:w-[60%] ">
+      <div className="flex flex-col w-[90%] md:w-[60%] text-center font-semibold">
         {/* <p className="text-4xl text-eywnavy-1000 my-20">This Week's Activity</p>
         {latestActivity && <LatestActivityCard activity={latestActivity} />} */}
-        <p className="text-2xl md:text-4xl font-medium text-eywnavy-1000 md:my-20 mt-0 mb-8 md:mb-8">
+        <p className="text-3xl md:text-4xl  text-eywnavy-1000 md:mt-20 mt-0 mb-8 md:mb-8">
           Resources
         </p>
-        <div className="flex flex-row gap-6 flex-wrap justify-center">
+        <div className="flex flex-row gap-6 flex-wrap justify-center ">
           {resources &&
             resources.map((resource, i) => (
               <ResourceCard resource={resource} key={i} />
             ))}
         </div>
-        <p className="text-2xl md:text-4xl font-medium text-eywnavy-1000 mt-20 mb-8">
+        <p className="text-3xl md:text-4xl text-eywnavy-1000 mt-24 mb-8">
           Activities
         </p>
         <div className="flex flex-row gap-6 flex-wrap justify-center">

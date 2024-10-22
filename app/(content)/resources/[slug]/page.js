@@ -29,7 +29,11 @@ export default async function Page({ params: { slug } }) {
     <div className="flex flex-col overflow-hidden">
       <div className="flex w-full relative h-[35vh]">
         <Image
-          src={resource.imageURL}
+          src={urlFor(resource.headerImage)
+            .width(1000)
+            .fit("clip")
+            .auto("format")
+            .url()}
           fill={true}
           className="object-cover"
           alt="Resource header image"
@@ -84,7 +88,11 @@ export default async function Page({ params: { slug } }) {
                 {block.image && (
                   <div className="flex relative w-full min-h-[500px]">
                     <Image
-                      src={urlFor(block.image).quality(60).format("webp").url()}
+                      src={urlFor(block.image)
+                        .height(600)
+                        .fit("clip")
+                        .auto("format")
+                        .url()}
                       fill={true}
                       className="object-cover rounded-xl"
                       alt="Resource image in body"

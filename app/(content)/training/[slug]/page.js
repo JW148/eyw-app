@@ -29,7 +29,11 @@ export default async function Page({ params: { slug } }) {
     <div className="flex flex-col overflow-hidden">
       <div className="flex w-full relative h-[35vh]">
         <Image
-          src={training.imageURL}
+          src={urlFor(training.headerImage)
+            .width(1000)
+            .fit("clip")
+            .auto("format")
+            .url()}
           fill={true}
           className="object-cover"
           alt="Training header image"
@@ -50,8 +54,11 @@ export default async function Page({ params: { slug } }) {
           />
         </div>
       </div>
-      <Card className="flex w-[50vw] self-center text-eywnavy-1000 p-6 mb-20 mt-10">
-        <div className="text-large mb-6">
+      <Card
+        className="flex w-[95vw] md:w-[50vw] self-center text-eywnavy-1000 p-2 md:p-6 mb-20 mt-10"
+        shadow="lg"
+      >
+        <div className="flex flex-col w-full text-justify text-large px-8 md:px-10 mb-6 ">
           <PortableText
             value={training?.introduction}
             components={components}

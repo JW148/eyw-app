@@ -1,6 +1,7 @@
 import { Card, CardBody, CardFooter } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
+import { urlFor } from "../../../sanity/lib/image";
 
 export default function ResourceCard({ resource }) {
   return (
@@ -14,9 +15,14 @@ export default function ResourceCard({ resource }) {
       <Link href={`/resources/${resource.slug.current}`}>
         <CardBody>
           <Image
-            src={resource.imageURL}
+            src={urlFor(resource.headerImage)
+              .width(300)
+              .fit("clip")
+              .quality(75)
+              .auto("format")
+              .url()}
             width={300}
-            height={300}
+            height={200}
             className="rounded-lg"
             alt="Resource card main image"
             quality={70}

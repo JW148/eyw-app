@@ -8,7 +8,7 @@ export default function RelatedActivities({ activities }) {
   return (
     <div className="flex flex-col w-[95vw] md:w-[50vw] self-center">
       <p className="text-2xl text-eywnavy-1000 mb-2">Related Activities</p>
-      <div className="no-scrollbar flex flex-row gap-4 flex-nowrap overflow-x-scroll p-2">
+      <div className="no-scrollbar flex flex-row gap-6 flex-nowrap overflow-x-scroll p-2">
         {activities.map((activity) => (
           <Card
             shadow="md"
@@ -25,9 +25,20 @@ export default function RelatedActivities({ activities }) {
                     .quality(60)
                     .format("webp")
                     .url()}
+                  width={300}
+                  height={300}
+                  className="rounded-lg md:block hidden"
+                  alt="Activity card main iamge"
+                  quality={70}
+                />
+                <Image
+                  src={urlFor(activity.headerImage)
+                    .quality(60)
+                    .format("webp")
+                    .url()}
                   width={150}
                   height={150}
-                  className="rounded-lg"
+                  className="rounded-lg md:hidden block"
                   alt="Activity card main iamge"
                   quality={70}
                 />
