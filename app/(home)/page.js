@@ -1,12 +1,16 @@
 import Image from "next/image";
-import { getActivities, getLatestActivity, getResources } from "../lib/data";
+import {
+  getHomeActivities,
+  getLatestActivity,
+  getHomeResources,
+} from "../lib/data";
 import ResourceCard from "../components/resources/resourceCard";
 import ActivityCard from "../components/activities/activityCard";
 import LatestActivityCard from "../components/activities/latestActivityCard";
 
 export default async function Home() {
-  const resources = await getResources();
-  const activities = await getActivities();
+  const resources = await getHomeResources();
+  const activities = await getHomeActivities();
   // const latestActivity = await getLatestActivity();
   return (
     <div className="flex w-full flex-col  items-center">

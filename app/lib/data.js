@@ -1,5 +1,7 @@
 import { client } from "../../sanity/lib/client";
 import {
+  HOME_ACTIVITIES_QUERY,
+  HOME_RESOURCES_QUERY,
   RESOURCES_QUERY,
   RESOURCE_QUERY,
   ACTIVITIES_QUERY,
@@ -10,6 +12,24 @@ import {
 } from "../../sanity/lib/queries";
 
 const options = { next: { revalidate: 30 } };
+
+export async function getHomeResources() {
+  try {
+    const resources = await client.fetch(HOME_RESOURCES_QUERY, {}, options);
+    return resources;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+export async function getHomeActivities() {
+  try {
+    const activities = await client.fetch(HOME_ACTIVITIES_QUERY, {}, options);
+    return activities;
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 export async function getResources() {
   try {

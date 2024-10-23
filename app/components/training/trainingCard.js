@@ -1,6 +1,7 @@
 import { Card, CardBody, CardFooter } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
+import { urlFor } from "../../../sanity/lib/image";
 
 export default function TrainingCard({ training }) {
   return (
@@ -14,7 +15,11 @@ export default function TrainingCard({ training }) {
       <Link href={`/training/${training.slug.current}`}>
         <CardBody>
           <Image
-            src={training.imageURL}
+            src={urlFor(training.headerImage)
+              .width(400)
+              .fit("clip")
+              .auto("format")
+              .url()}
             width={300}
             height={300}
             className="rounded-lg"
