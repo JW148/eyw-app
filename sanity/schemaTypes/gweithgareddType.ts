@@ -1,9 +1,9 @@
 import { defineField, defineType } from "sanity";
 import { PiPersonArmsSpread } from "react-icons/pi";
 
-export const activityType = defineType({
-  name: "activity",
-  title: "Activities",
+export const gweithgareddType = defineType({
+  name: "gweithgaredd",
+  title: "Gweithgareddau",
   type: "document",
   icon: PiPersonArmsSpread,
   fields: [
@@ -65,12 +65,6 @@ export const activityType = defineType({
           ],
         },
       ],
-    }),
-    defineField({
-      name: "translation",
-      title: "Welsh Translation",
-      type: "reference",
-      to: [{ type: "gweithgaredd" }],
     }),
   ],
 });

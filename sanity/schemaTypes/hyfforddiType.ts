@@ -1,9 +1,9 @@
 import { defineField, defineType, Preview } from "sanity";
 import { IoVideocamOutline } from "react-icons/io5";
 
-export const trainingType = defineType({
-  name: "training",
-  title: "Training",
+export const hyfforddiType = defineType({
+  name: "hyfforddi",
+  title: "Hyfforddiant",
   type: "document",
   icon: IoVideocamOutline,
   fields: [
@@ -45,12 +45,6 @@ export const trainingType = defineType({
       title: "Training Video",
       type: "file",
       validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: "translation",
-      title: "Welsh Translation",
-      type: "reference",
-      to: [{ type: "hyfforddi" }],
     }),
   ],
 });

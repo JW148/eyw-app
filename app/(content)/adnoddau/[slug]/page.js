@@ -1,4 +1,4 @@
-import { getResource } from "../../../lib/data";
+import { getResourceCym } from "../../../lib/data";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { Back } from "../../../components/ui/back";
@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default async function Page({ params: { slug } }) {
   //get resource by slug
-  const resource = await getResource(slug);
+  const resource = await getResourceCym(slug);
 
   const components = {
     list: {
@@ -112,19 +112,16 @@ export default async function Page({ params: { slug } }) {
           />
         </div>
       </Card>
-      {resource.translationSlug && (
+      {resource.translation && (
         <Card
-          className="flex w-[95vw] md:w-[50vw] self-center p-2 md:p-6 mb-16 bg-eywteal-1000 text-white text-lg font-medium "
+          className="flex w-[95vw] md:w-[50vw] self-center p-2 md:p-6 mb-20 bg-eywteal-1000 text-white text-lg font-medium "
           shadow="lg"
           isPressable
           disableRipple
         >
-          <Link
-            className="flex w-full justify-center"
-            href={`/adnoddau/${resource.translationSlug}`}
-          >
+          <div className="flex w-full justify-center">
             Mae'r erthygl yma ar gael yn Gymraeg. Cliciwch yma i'w ddarllen →
-          </Link>
+          </div>
         </Card>
       )}
       {resource.relatedActivities && (

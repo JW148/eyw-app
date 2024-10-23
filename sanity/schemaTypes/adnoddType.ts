@@ -1,9 +1,9 @@
 import { defineField, defineType, Preview } from "sanity";
 import { BsFileEarmarkText } from "react-icons/bs";
 
-export const resourceType = defineType({
-  name: "resource",
-  title: "Resources",
+export const adnoddType = defineType({
+  name: "adnodd",
+  title: "Adnoddau",
   type: "document",
   icon: BsFileEarmarkText,
   fields: [
@@ -86,12 +86,6 @@ export const resourceType = defineType({
           to: [{ type: "activity" }],
         },
       ],
-    }),
-    defineField({
-      name: "translation",
-      title: "Welsh Translation",
-      type: "reference",
-      to: [{ type: "adnodd" }],
     }),
   ],
 });

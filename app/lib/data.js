@@ -9,6 +9,9 @@ import {
   TRAININGS_QUERY,
   TRAINING_QUERY,
   FETCH_LATEST_ACTIVITY,
+  RESOURCE_CYM_QUERY,
+  ACTIVITY_CYM_QUERY,
+  TRAINING_CYM_QUERY,
 } from "../../sanity/lib/queries";
 
 const options = { next: { revalidate: 30 } };
@@ -101,6 +104,45 @@ export async function getLatestActivity() {
   try {
     const activity = await client.fetch(FETCH_LATEST_ACTIVITY, {}, options);
     return activity;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function getResourceCym(slug) {
+  try {
+    const resource = await client.fetch(
+      RESOURCE_CYM_QUERY,
+      { slug: slug },
+      options
+    );
+    return resource;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+export async function getAcitvityCym(slug) {
+  try {
+    const activity = await client.fetch(
+      ACTIVITY_CYM_QUERY,
+      { slug: slug },
+      options
+    );
+    return activity;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function getTrainingCym(slug) {
+  try {
+    const training = await client.fetch(
+      TRAINING_CYM_QUERY,
+      { slug: slug },
+      options
+    );
+    return training;
   } catch (error) {
     console.error(error);
   }

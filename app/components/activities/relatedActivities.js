@@ -4,7 +4,6 @@ import Image from "next/image";
 import { urlFor } from "../../../sanity/lib/image";
 
 export default function RelatedActivities({ activities }) {
-  console.log(activities);
   return (
     <div className="flex flex-col w-[95vw] md:w-[50vw] self-center">
       <p className="text-2xl text-eywnavy-1000 mb-2">Related Activities</p>
