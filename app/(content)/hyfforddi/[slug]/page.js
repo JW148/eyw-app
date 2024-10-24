@@ -1,15 +1,15 @@
-import { getResourceCym } from "../../../lib/data";
+import { getTrainingCym } from "../../../lib/data";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { Back } from "../../../components/ui/back";
 import { urlFor } from "../../../../sanity/lib/image";
-import { Card } from "@nextui-org/react";
-import RelatedActivities from "../../../components/activities/relatedActivities";
+import { Card, CardFooter } from "@nextui-org/react";
+import Player from "next-video/player";
 import Link from "next/link";
 
 export default async function Page({ params: { slug } }) {
   //get resource by slug
-  const resource = await getResourceCym(slug);
+  const training = await getTrainingCym(slug);
 
   const components = {
     list: {
@@ -30,20 +30,20 @@ export default async function Page({ params: { slug } }) {
     <div className="flex flex-col overflow-hidden">
       <div className="flex w-full relative h-[35vh]">
         <Image
-          src={urlFor(resource.headerImage)
+          src={urlFor(training.headerImage)
             .width(1000)
             .fit("clip")
             .auto("format")
             .url()}
           fill={true}
           className="object-cover"
-          alt="Resource header image"
+          alt="Training header image"
         />
         <div className="grid grow grid-cols-4 top-0  bg-gradient-to-t from-slate-100 backdrop z-10 items-center justify-items-center text-center ">
           <Back />
           <div className="flex flex-col col-span-2 text-eywnavy-1000">
             <p className="text-4xl md:text-5xl mb-4 font-bold ">
-              {resource?.title}
+              {training?.title}
             </p>
           </div>
           <Image
@@ -51,7 +51,7 @@ export default async function Page({ params: { slug } }) {
             width={100}
             height={100}
             alt="Small EYW logo"
-            className="self-start md:self-center p-3"
+            className="self-start md:self-center"
           />
         </div>
       </div>
@@ -59,50 +59,15 @@ export default async function Page({ params: { slug } }) {
         className="flex w-[95vw] md:w-[50vw] self-center text-eywnavy-1000 p-2 md:p-6 mb-20 mt-10"
         shadow="lg"
       >
-        <p className="text-2xl text-center m-10 underline font-semibold">
-          {resource?.subheading}
-        </p>
         <div className="flex flex-col w-full text-justify text-large px-8 md:px-10 mb-6 ">
           <PortableText
-            value={resource?.introduction}
+            value={training?.introduction}
             components={components}
           />
         </div>
-        {resource.body &&
-          resource.body.map((block, i) => {
-            return (
-              <div
-                className="flex w-full self-center flex-col items-center"
-                key={i}
-              >
-                <div className="flex flex-col my-6 text-justify text-white text-large rounded-2xl bg-eywpurple-750 p-10">
-                  {block.itemTitle && (
-                    <p className="font-semibold text-2xl mb-8">
-                      {block.itemTitle}
-                    </p>
-                  )}
-                  <PortableText
-                    value={block.supportText}
-                    components={components}
-                  />
-                </div>
-                {block.image && (
-                  <div className="flex relative w-full min-h-[500px]">
-                    <Image
-                      src={urlFor(block.image)
-                        .height(600)
-                        .fit("clip")
-                        .auto("format")
-                        .url()}
-                      fill={true}
-                      className="object-cover rounded-xl"
-                      alt="Resource image in body"
-                    />
-                  </div>
-                )}
-              </div>
-            );
-          })}
+        <div className="flex rounded-xl">
+          <Player src={training.videoUrl} />
+        </div>
         <div className="flex h-[75px] relative mt-10">
           <Image
             src={"/logos/Logo Full Colour.png"}

@@ -5,6 +5,7 @@ import { Back } from "../../../components/ui/back";
 import { urlFor } from "../../../../sanity/lib/image";
 import { Card, CardFooter } from "@nextui-org/react";
 import Player from "next-video/player";
+import Link from "next/link";
 
 export default async function Page({ params: { slug } }) {
   //get resource by slug
@@ -76,6 +77,22 @@ export default async function Page({ params: { slug } }) {
           />
         </div>
       </Card>
+      {training.translationSlug && (
+        <Card
+          className="flex w-[95vw] md:w-[50vw] self-center p-2 md:p-6 mb-16 bg-eywteal-1000 text-white text-lg font-medium "
+          shadow="lg"
+          isPressable
+          disableRipple
+        >
+          <Link
+            className="flex w-full justify-center"
+            href={`/gweithgareddau/${training.translationSlug}`}
+          >
+            Mae&apos;r erthygl yma ar gael yn Gymraeg. Cliciwch yma i&apos;w
+            ddarllen →
+          </Link>
+        </Card>
+      )}
     </div>
   );
 }

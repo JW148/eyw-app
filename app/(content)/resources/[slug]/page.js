@@ -123,7 +123,8 @@ export default async function Page({ params: { slug } }) {
             className="flex w-full justify-center"
             href={`/adnoddau/${resource.translationSlug}`}
           >
-            Mae'r erthygl yma ar gael yn Gymraeg. Cliciwch yma i'w ddarllen →
+            Mae&apos;r erthygl yma ar gael yn Gymraeg. Cliciwch yma i&apos;w
+            ddarllen →
           </Link>
         </Card>
       )}

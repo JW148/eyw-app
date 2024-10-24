@@ -1,15 +1,14 @@
-import { getAcitvity } from "../../../lib/data";
+import { getAcitvityCym } from "../../../lib/data";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { Back } from "../../../components/ui/back";
 import { urlFor } from "../../../../sanity/lib/image";
 import { Card } from "@nextui-org/react";
 import { MdOutlineTipsAndUpdates } from "react-icons/md";
-import Link from "next/link";
 
 export default async function Page({ params: { slug } }) {
   //get activity by slug
-  const activity = await getAcitvity(slug);
+  const activity = await getAcitvityCym(slug);
 
   const components = {
     list: {
@@ -66,7 +65,7 @@ export default async function Page({ params: { slug } }) {
           />
         </div>
         <div className="flex flex-col w-full text-justify text-large rounded-2xl bg-eywcoral-1000/85 text-white p-8 md:p-10">
-          <p className="text-3xl font-semibold pb-4">Method</p>
+          <p className="text-3xl font-semibold pb-4">Dull</p>
           <PortableText value={activity?.method} components={components} />
         </div>
         {activity.tip && (
@@ -117,22 +116,6 @@ export default async function Page({ params: { slug } }) {
           />
         </div>
       </Card>
-      {activity.translationSlug && (
-        <Card
-          className="flex w-[95vw] md:w-[50vw] self-center p-2 md:p-6 mb-16 bg-eywteal-1000 text-white text-lg font-medium "
-          shadow="lg"
-          isPressable
-          disableRipple
-        >
-          <Link
-            className="flex w-full justify-center"
-            href={`/gweithgareddau/${activity.translationSlug}`}
-          >
-            Mae&apos;r erthygl yma ar gael yn Gymraeg. Cliciwch yma i&apos;w
-            ddarllen →
-          </Link>
-        </Card>
-      )}
     </div>
   );
 }
